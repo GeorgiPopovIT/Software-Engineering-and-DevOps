@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        working-directory: ./Software-Engineering-and-DevOps/CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/01.Student-Registry-App
     - name: Install dependencies
       run: npm i
       working-directory: ./Software-Engineering-and-DevOps/CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/01.Student-Registry-App
