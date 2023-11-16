@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/
+        working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,6 +26,7 @@ jobs:
       # cache: 'npm'
     - name: Install dependencies
       run: npm ci
+      working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources
     - name: Build app
       run: npm run build --if-present
     - name: Run test
