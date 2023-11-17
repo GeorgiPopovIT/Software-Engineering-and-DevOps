@@ -27,6 +27,6 @@ jobs:
       run: npm run
     - name: Run server  
       run: node server.js
-      working-directory: server
+      working-directory: ./server
     - name: Start Playwright tests  
       run: npm test
