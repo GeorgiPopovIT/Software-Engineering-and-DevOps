@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources
+        working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/01.Student-Registry-App
     runs-on: ubuntu-latest
 
     strategy:
