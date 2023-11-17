@@ -10,7 +10,7 @@ jobs:
   build:
     defaults:
      run:
-      working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/Library
+      working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/Library/
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,5 @@ jobs:
       run: npm run start
     - name: Run server  
       run: node server.js
-      working-directory: ./server
     - name: Start Playwright tests  
       run: npm test
