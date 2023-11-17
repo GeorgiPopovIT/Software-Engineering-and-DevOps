@@ -23,8 +23,8 @@ jobs:
         cache-dependency-path: ./
     - name: Install dependencies 
       run: npm i
-    - name: Run app  
-      run: npm run
+    - name: Start app  
+      run: npm start
     - name: Run server  
       run: node server.js
       working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources/Library/server
