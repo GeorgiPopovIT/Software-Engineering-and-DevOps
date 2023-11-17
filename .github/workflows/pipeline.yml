@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - working-directory: ./CI and CD with GitHub Actions/11-Exercise-CI-CD-in-Git-Hub-Actions-Resources
     - name: Install dependencies
       run: npm ci
     - name: Build app
