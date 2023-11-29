@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install dependencies 
+      run: npm install
+    - name: Change the config value
+      run: echo "export const settings = { host:\"http://localhost:3030\" };" > src/config.js
+    - name: Start Backend  
+      run: npm run start-be &
+    - name: Start Frontend  
+      run: npm run start-fe &
+    # - name: Start Playwright tests  
+    #   run: npm test
+
+  deploy-backend:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_BACKEND_KEY }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+  
+  deploy-frontend:
+    needs: deploy-backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_FRONTEND_KEY }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
