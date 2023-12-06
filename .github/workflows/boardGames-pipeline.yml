@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: 20.x
         cache: 'npm'
-         cache-dependency-path : ./Exam-Preparation/boardgames
+        cache-dependency-path : ./Exam-Preparation/boardgames
     - name: Install dependencies
       run: npm install
     - name: Run unit tests
